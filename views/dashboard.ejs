@@ -1,0 +1,138 @@
+<%- include('partials/header') %>
+
+<%
+  const inside = board.filter((b) => b.state === 'inside').length;
+  const done = board.filter((b) => b.state === 'done').length;
+  const pct = Math.round(shift.progress * 100);
+  const CIRC = 2 * Math.PI * 52;
+  const offset = CIRC * (1 - shift.progress);
+  const longDate = now.toLocaleDateString('es-EC', { weekday: 'long', day: 'numeric', month: 'long' });
+  let headline;
+  if (shift.progress <= 0) headline = 'La jornada nocturna aún no comienza';
+  else if (shift.progress >= 1) headline = `Jornada cerrada: ${done} de ${stats.employees} docentes completaron`;
+  else headline = `${inside + done} de ${stats.employees} docentes registrados hoy`;
+  const maxPresent = Math.max(1, ...series.map((s) => s.total));
+%>
+
+<div class="bento">
+
+  <section class="panel hero" aria-label="Estado de la jornada">
+    <div class="hero-copy">
+      <span class="eyebrow">Jornada nocturna · <%= shift.start %> – <%= shift.end %></span>
+      <h1><%= headline %></h1>
+      <p class="hero-sub"><%= longDate.charAt(0).toUpperCase() + longDate.slice(1) %> · <%= inside %> en aula ahora, <%= done %> ya salieron</p>
+      <div class="shift-track" aria-hidden="true">
+        <div class="shift-fill" style="--p: <%= pct %>%"></div>
+        <% for (let h = 16; h <= 22; h++) { %><span class="shift-tick"><%= h %>h</span><% } %>
+      </div>
+    </div>
+    <div class="ring" role="img" aria-label="Jornada transcurrida al <%= pct %> por ciento">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="ring-bg" cx="60" cy="60" r="52"/>
+        <circle class="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="<%= CIRC.toFixed(1) %>" style="--off: <%= offset.toFixed(1) %>; --circ: <%= CIRC.toFixed(1) %>"/>
+      </svg>
+      <div class="ring-label"><b><%= pct %><small>%</small></b><span>de la jornada</span></div>
+    </div>
+  </section>
+
+  <section class="panel device" aria-label="Terminal biométrico">
+    <div class="panel-head">
+      <h2>Terminal de acceso</h2>
+      <span class="pill pill-ok"><span class="pill-dot"></span>En línea</span>
+    </div>
+    <div class="device-model"><%= device.model %></div>
+    <dl class="kv">
+      <div><dt>Nombre</dt><dd><%= device.name %></dd></div>
+      <div><dt>IP</dt><dd class="mono"><%= device.ip %></dd></div>
+      <div><dt>Firmware</dt><dd class="mono"><%= device.firmware %></dd></div>
+      <div><dt>Última sincronización</dt><dd class="mono"><%= device.lastSync || '—' %></dd></div>
+    </dl>
+    <div class="meter">
+      <div class="meter-top"><span>Docentes sincronizados</span><b class="mono"><%= stats.synced %>/<%= stats.employees %></b></div>
+      <div class="meter-bar"><i style="--p: <%= stats.employees ? Math.round(stats.synced / stats.employees * 100) : 0 %>%"></i></div>
+    </div>
+  </section>
+
+  <div class="tile tile-a">
+    <span class="tile-icon"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="6.5" r="3.2"/><path d="M3.5 17c.8-3.4 3.4-5.2 6.5-5.2s5.7 1.8 6.5 5.2" stroke-linecap="round"/></svg></span>
+    <span class="tile-value"><%= stats.employees %></span>
+    <span class="tile-label">Docentes en jornada nocturna</span>
+  </div>
+  <div class="tile tile-b">
+    <span class="tile-icon"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.5 10.5l3.5 3.5 7.5-8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="tile-value"><%= stats.present %><small>/<%= stats.employees %></small></span>
+    <span class="tile-label">Con entrada registrada hoy</span>
+  </div>
+  <div class="tile tile-c">
+    <span class="tile-icon"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.6 2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="tile-value"><%= stats.hoursWorked %><small> h</small></span>
+    <span class="tile-label">Horas registradas en <%= stats.daysRecorded %> días</span>
+  </div>
+  <div class="tile tile-d">
+    <span class="tile-icon"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15l4-5 3 3 4-6 3 4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="tile-value"><%= stats.avgEntrada %></span>
+    <span class="tile-label">Hora media de entrada</span>
+  </div>
+
+  <section class="panel board" aria-label="Asistencia de hoy">
+    <div class="panel-head">
+      <h2>Asistencia de hoy</h2>
+      <span class="chip"><%= inside %> en aula · <%= done %> salieron</span>
+    </div>
+    <ul class="board-list">
+      <% board.forEach((b) => { %>
+        <li class="board-row state-<%= b.state %>">
+          <span class="avatar av-<%= b.tone %>" aria-hidden="true"><%= b.initials %></span>
+          <div class="board-who">
+            <b><%= b.short %></b>
+            <span><%= b.subject %></span>
+          </div>
+          <div class="board-times mono">
+            <span title="Entrada"><i class="dot-in"></i><%= b.entrada || '--:--' %></span>
+            <span title="Salida"><i class="dot-out"></i><%= b.salida || '--:--' %></span>
+          </div>
+          <span class="board-state">
+            <% if (b.state === 'inside') { %><span class="pill pill-ok"><span class="pill-dot"></span>En aula</span>
+            <% } else if (b.state === 'done') { %><span class="pill pill-neutral"><span class="pill-dot"></span>Completó</span>
+            <% } else { %><span class="pill pill-warn"><span class="pill-dot"></span>Esperando</span><% } %>
+          </span>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
+
+  <section class="panel chart" aria-label="Asistencia por día">
+    <div class="panel-head">
+      <h2>Últimos <%= series.length %> días</h2>
+      <span class="chip">docentes con entrada</span>
+    </div>
+    <div class="bars" role="img" aria-label="Gráfico de barras de asistencia diaria">
+      <% series.forEach((s, i) => { %>
+        <div class="bar-col<%= s.isToday ? ' is-today' : '' %>" style="--h: <%= Math.round(s.present / maxPresent * 100) %>%; --i: <%= i %>" title="<%= s.label %>: <%= s.present %> de <%= s.total %>">
+          <span class="bar-n mono"><%= s.present %></span>
+          <span class="bar-track"><span class="bar"></span></span>
+          <span class="bar-l"><%= s.label %></span>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="panel feed" aria-label="Actividad reciente">
+    <div class="panel-head">
+      <h2>Actividad reciente</h2>
+      <a class="link-quiet" href="/asistencia">Ver todo</a>
+    </div>
+    <ol class="timeline">
+      <% recentEvents.forEach((ev) => { %>
+        <li class="tl-item tl-<%= ev.kind %>">
+          <span class="tl-dot"></span>
+          <div><b><%= ev.who %></b> marcó <%= ev.kind === 'entrada' ? 'entrada' : 'salida' %></div>
+          <span class="tl-time mono"><%= ev.day %> · <%= ev.time %></span>
+        </li>
+      <% }) %>
+    </ol>
+  </section>
+
+</div>
+
+<%- include('partials/footer') %>

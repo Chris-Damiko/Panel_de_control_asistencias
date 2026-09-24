@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Iniciar sesión en el panel de control de acceso.">
+  <title>Iniciar sesión — <%= settings.institution_name %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <style>
+    :root {
+      --primary: <%= settings.primary_color %>;
+      --secondary: <%= settings.secondary_color %>;
+      --accent: <%= settings.accent_color %>;
+    }
+  </style>
+</head>
+<body class="login-page">
+  <main class="login-split">
+
+    <section class="login-brand" aria-label="Institución">
+      <div class="lb-top">
+        <% if (settings.logo_path) { %>
+          <img src="<%= settings.logo_path %>" alt="Escudo de <%= settings.institution_name %>" class="lb-logo">
+        <% } %>
+        <span class="lb-tag">Control de acceso</span>
+      </div>
+
+      <div class="lb-body">
+        <h1><%= settings.institution_name %></h1>
+        <p>Registro de entradas y salidas de la jornada nocturna, en tiempo real y con reporte listo para descargar.</p>
+        <ul class="lb-points">
+          <li><span class="lb-num mono">01</span><div><b>Registro biométrico</b><small>Cada marca llega del terminal sin intervención manual.</small></div></li>
+          <li><span class="lb-num mono">02</span><div><b>Asistencia por día</b><small>Entrada, salida y horas en aula de cada docente.</small></div></li>
+          <li><span class="lb-num mono">03</span><div><b>Reporte en Excel</b><small>Descarga el registro completo con un clic.</small></div></li>
+        </ul>
+      </div>
+
+      <div class="lb-foot mono">La Troncal · Cañar · Ecuador</div>
+    </section>
+
+    <section class="login-side">
+      <form class="login-form" method="POST" action="/login">
+        <span class="eyebrow">Acceso administrativo</span>
+        <h2>Iniciar sesión</h2>
+        <p class="lf-sub">Ingresá con tu cuenta para ver la asistencia de hoy.</p>
+        <% if (error) { %>
+          <p class="error-msg" role="alert"><%= error %></p>
+        <% } %>
+        <label for="email">Correo</label>
+        <input id="email" type="email" name="email" required autofocus autocomplete="username" placeholder="nombre@institucion.edu.ec">
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+        <button type="submit">
+          Ingresar
+          <span class="btn-icon-circle">
+            <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h11M11 5.5L15.5 10 11 14.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+      </form>
+    </section>
+
+  </main>
+</body>
+</html>

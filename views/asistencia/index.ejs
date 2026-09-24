@@ -1,0 +1,75 @@
+<%- include('../partials/header') %>
+
+<div class="view-header-row">
+  <div>
+    <span class="eyebrow">Registro biométrico</span>
+    <h1>Asistencia de la jornada nocturna</h1>
+    <p>Entradas y salidas por día, 16:00 – 22:00. Se actualiza sola a medida que el terminal registra eventos.</p>
+  </div>
+  <a href="/asistencia/exportar" class="btn-primary">
+    Descargar registro (Excel)
+    <span class="btn-icon-circle">
+      <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3v10M6 9l4 4 4-4M4 16.5h12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
+</div>
+
+<div class="summary-strip">
+  <div class="sum"><span class="mono"><%= stats.daysRecorded %></span><small>días registrados</small></div>
+  <div class="sum"><span class="mono"><%= stats.totalEvents %></span><small>eventos del terminal</small></div>
+  <div class="sum"><span class="mono"><%= stats.hoursWorked %> h</span><small>horas en aula</small></div>
+  <div class="sum"><span class="mono"><%= stats.avgEntrada %></span><small>entrada promedio</small></div>
+  <label class="filter">
+    <span>Docente</span>
+    <select id="filter-teacher">
+      <option value="">Todos</option>
+      <% employees.forEach((e) => { %><option value="<%= e.id %>"><%= e.short %></option><% }) %>
+    </select>
+  </label>
+</div>
+
+<% if (days.length === 0) { %>
+  <div class="panel empty-state">
+    <h2>Sin registros todavía</h2>
+    <p>Cuando el terminal registre la primera entrada, va a aparecer acá.</p>
+  </div>
+<% } %>
+
+<div class="day-list">
+  <% days.forEach((d) => { %>
+    <section class="panel day" data-day>
+      <div class="day-head">
+        <div>
+          <span class="day-rel"><%= d.rel %></span>
+          <h2><%= d.label %></h2>
+        </div>
+        <span class="chip <%= d.present === d.total ? 'chip-live' : '' %>"><b class="mono"><%= d.present %>/<%= d.total %></b> presentes</span>
+      </div>
+      <div class="day-rows">
+        <% d.rows.forEach((r) => { %>
+          <div class="day-row" data-teacher="<%= r.id %>">
+            <span class="avatar av-<%= r.tone %>" aria-hidden="true"><%= r.initials %></span>
+            <b><%= r.short %></b>
+            <span class="mono day-in"><i class="dot-in"></i><%= r.entrada || '--:--' %></span>
+            <span class="mono day-out"><i class="dot-out"></i><%= r.salida || '--:--' %></span>
+            <span class="day-hours">
+              <span class="hours-bar"><i style="--p: <%= r.hoursPct %>%"></i></span>
+              <span class="mono"><%= r.hours ? r.hours + ' h' : '—' %></span>
+            </span>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  <% }) %>
+</div>
+
+<script>
+  document.getElementById('filter-teacher').addEventListener('change', function (e) {
+    var id = e.target.value;
+    document.querySelectorAll('.day-row').forEach(function (row) {
+      row.hidden = id !== '' && row.dataset.teacher !== id;
+    });
+  });
+</script>
+
+<%- include('../partials/footer') %>

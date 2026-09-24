@@ -1,0 +1,194 @@
+{
+  "app.js": {
+    "mtime": 1789105145.9189904,
+    "seen": 1789136328.5207124,
+    "ast_hash": "7aa247505dbc510ebdf3b85148ebe477",
+    "semantic_hash": "7aa247505dbc510ebdf3b85148ebe477"
+  },
+  "config/db.js": {
+    "mtime": 1789104920.9574022,
+    "seen": 1789136328.5207171,
+    "ast_hash": "8cdfd34ea913d287210ffa586617700b",
+    "semantic_hash": "8cdfd34ea913d287210ffa586617700b"
+  },
+  "config/hikvisionConfig.js": {
+    "mtime": 1789104924.8164294,
+    "seen": 1789136328.5207188,
+    "ast_hash": "b260c9a917ec39e9dd261970cd74a7cc",
+    "semantic_hash": "b260c9a917ec39e9dd261970cd74a7cc"
+  },
+  "database/init.js": {
+    "mtime": 1789105156.5240655,
+    "seen": 1789136328.5207205,
+    "ast_hash": "48860d57484ba78809dbb9142b46867d",
+    "semantic_hash": "48860d57484ba78809dbb9142b46867d"
+  },
+  "database/schema.sql": {
+    "mtime": 1789104935.335503,
+    "seen": 1789136328.5207214,
+    "ast_hash": "89614c66e3a985746c444d8133bb6d35",
+    "semantic_hash": "89614c66e3a985746c444d8133bb6d35"
+  },
+  "database/seedAdmin.js": {
+    "mtime": 1789105153.5350444,
+    "seen": 1789136328.5207224,
+    "ast_hash": "92e25ef2c500fa26cea763a4ec7dd537",
+    "semantic_hash": "92e25ef2c500fa26cea763a4ec7dd537"
+  },
+  "middlewares/auth.js": {
+    "mtime": 1789104962.7216957,
+    "seen": 1789136328.520723,
+    "ast_hash": "194b02d39bcc46317bc60d41e428cd86",
+    "semantic_hash": "194b02d39bcc46317bc60d41e428cd86"
+  },
+  "middlewares/upload.js": {
+    "mtime": 1789104968.1997342,
+    "seen": 1789136328.5207243,
+    "ast_hash": "94bf269b98d6b4ca2286ccff8956c040",
+    "semantic_hash": "94bf269b98d6b4ca2286ccff8956c040"
+  },
+  "models/Employee.js": {
+    "mtime": 1789104954.7626398,
+    "seen": 1789136328.5207253,
+    "ast_hash": "67fa6a3ff70f0afd8d115227640040fa",
+    "semantic_hash": "67fa6a3ff70f0afd8d115227640040fa"
+  },
+  "models/InstitutionSettings.js": {
+    "mtime": 1789104943.8945632,
+    "seen": 1789136328.520726,
+    "ast_hash": "001c6a4d8d12f00fa8b584fac23dabfe",
+    "semantic_hash": "001c6a4d8d12f00fa8b584fac23dabfe"
+  },
+  "models/SyncLog.js": {
+    "mtime": 1789104959.1786706,
+    "seen": 1789136328.5207272,
+    "ast_hash": "6fe1841fdb5604c73474f3bbef3195d5",
+    "semantic_hash": "6fe1841fdb5604c73474f3bbef3195d5"
+  },
+  "models/User.js": {
+    "mtime": 1789104948.260594,
+    "seen": 1789136328.520728,
+    "ast_hash": "47f63d5647637213a8998f1e4184746c",
+    "semantic_hash": "47f63d5647637213a8998f1e4184746c"
+  },
+  "package.json": {
+    "mtime": 1789105110.8587418,
+    "seen": 1789136328.520729,
+    "ast_hash": "cac24b3b2c607e89d1540b8daa471297",
+    "semantic_hash": "cac24b3b2c607e89d1540b8daa471297"
+  },
+  "routes/asistencia.js": {
+    "mtime": 1789105018.9350917,
+    "seen": 1789136328.52073,
+    "ast_hash": "44846254f5eb986b30543704ac600042",
+    "semantic_hash": "44846254f5eb986b30543704ac600042"
+  },
+  "routes/auth.js": {
+    "mtime": 1789104997.6139414,
+    "seen": 1789136328.5207312,
+    "ast_hash": "073f968fbf7d95ed8e8d197962464daa",
+    "semantic_hash": "073f968fbf7d95ed8e8d197962464daa"
+  },
+  "routes/cms.js": {
+    "mtime": 1789105004.3269887,
+    "seen": 1789136328.520732,
+    "ast_hash": "5ac4ea0f7d03c5f8a78723e7e46c2ed3",
+    "semantic_hash": "5ac4ea0f7d03c5f8a78723e7e46c2ed3"
+  },
+  "routes/dashboard.js": {
+    "mtime": 1789105008.76702,
+    "seen": 1789136328.5207329,
+    "ast_hash": "03c09bf8cacb534c4562c40257c8ac6a",
+    "semantic_hash": "03c09bf8cacb534c4562c40257c8ac6a"
+  },
+  "routes/dispositivos.js": {
+    "mtime": 1789105015.7270691,
+    "seen": 1789136328.5207336,
+    "ast_hash": "66ac165e037c089248f3138c6ece43a0",
+    "semantic_hash": "66ac165e037c089248f3138c6ece43a0"
+  },
+  "routes/empleados.js": {
+    "mtime": 1789105012.3950455,
+    "seen": 1789136328.5207348,
+    "ast_hash": "5d88305a8036951866198d58f2d6f043",
+    "semantic_hash": "5d88305a8036951866198d58f2d6f043"
+  },
+  "services/hikvision/hikvisionClient.js": {
+    "mtime": 1789104992.5449057,
+    "seen": 1789136328.5207355,
+    "ast_hash": "3cf9051f1625ce9199228e31f11c415c",
+    "semantic_hash": "3cf9051f1625ce9199228e31f11c415c"
+  },
+  "services/hikvision/isapiAdapter.js": {
+    "mtime": 1789104979.5318139,
+    "seen": 1789136328.5207365,
+    "ast_hash": "7da1daef626f510fd3ed66e36ee90b2b",
+    "semantic_hash": "7da1daef626f510fd3ed66e36ee90b2b"
+  },
+  "services/hikvision/openApiAdapter.js": {
+    "mtime": 1789104988.8008792,
+    "seen": 1789136328.5207372,
+    "ast_hash": "590efdb2a5a8c68eaf8f066ca68b8f78",
+    "semantic_hash": "590efdb2a5a8c68eaf8f066ca68b8f78"
+  },
+  "views/asistencia/index.ejs": {
+    "mtime": 1789105076.7375,
+    "seen": 1789136328.5207386,
+    "ast_hash": "7e49a6df3a0c0a51cb9ff9bc55b7aa00",
+    "semantic_hash": "7e49a6df3a0c0a51cb9ff9bc55b7aa00"
+  },
+  "views/cms.ejs": {
+    "mtime": 1789105060.7893872,
+    "seen": 1789136328.5207393,
+    "ast_hash": "198ef120effdc1f80f196d129e81a64e",
+    "semantic_hash": "198ef120effdc1f80f196d129e81a64e"
+  },
+  "views/dashboard.ejs": {
+    "mtime": 1789105052.71233,
+    "seen": 1789136328.5207403,
+    "ast_hash": "6375a68ae15d1d233b6a2c19ea7a7d94",
+    "semantic_hash": "6375a68ae15d1d233b6a2c19ea7a7d94"
+  },
+  "views/dispositivos/index.ejs": {
+    "mtime": 1789105072.5704706,
+    "seen": 1789136328.5207415,
+    "ast_hash": "264b3e2879fa02963f6674379d4d2620",
+    "semantic_hash": "264b3e2879fa02963f6674379d4d2620"
+  },
+  "views/empleados/index.ejs": {
+    "mtime": 1789105068.4874418,
+    "seen": 1789136328.5207424,
+    "ast_hash": "02c16822c1e316d26885026143d04014",
+    "semantic_hash": "02c16822c1e316d26885026143d04014"
+  },
+  "views/error.ejs": {
+    "mtime": 1789105080.526527,
+    "seen": 1789136328.5207434,
+    "ast_hash": "c398f89d13f523e59f268a55c63d0873",
+    "semantic_hash": "c398f89d13f523e59f268a55c63d0873"
+  },
+  "views/login.ejs": {
+    "mtime": 1789105047.458293,
+    "seen": 1789136328.520744,
+    "ast_hash": "685408b1083332e7ff7f3dd9553b2314",
+    "semantic_hash": "685408b1083332e7ff7f3dd9553b2314"
+  },
+  "views/partials/footer.ejs": {
+    "mtime": 1789105040.9712472,
+    "seen": 1789136328.520745,
+    "ast_hash": "eabf8d6b70d8659fd5650bbd2cecc4a5",
+    "semantic_hash": "eabf8d6b70d8659fd5650bbd2cecc4a5"
+  },
+  "views/partials/header.ejs": {
+    "mtime": 1789105038.4432294,
+    "seen": 1789136328.520746,
+    "ast_hash": "1bb8d27fab5e7acdad74dfe9f32fbf38",
+    "semantic_hash": "1bb8d27fab5e7acdad74dfe9f32fbf38"
+  },
+  "proyecto-hikvision-cms-istlt.md": {
+    "mtime": 1789104614.9942808,
+    "seen": 1789136328.520749,
+    "ast_hash": "50e4957757a752687000d00962f5286a",
+    "semantic_hash": "50e4957757a752687000d00962f5286a"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error — Control de Acceso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <style>
+    :root {
+      --primary: <%= settings.primary_color %>;
+      --secondary: <%= settings.secondary_color %>;
+      --accent: <%= settings.accent_color %>;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div class="ambient-glow" aria-hidden="true"></div>
+    <div class="error-card">
+      <span class="error-code">Panel de control de acceso</span>
+      <h1>No se pudo continuar</h1>
+      <p><%= message %></p>
+      <a href="/dashboard" class="btn-primary">
+        Volver al dashboard
+        <span class="btn-icon-circle">
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h11M11 5.5L15.5 10 11 14.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

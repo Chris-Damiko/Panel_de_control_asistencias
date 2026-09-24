@@ -1,0 +1,7 @@
+<%
+  const __s = String(typeof status !== 'undefined' ? status : '').toLowerCase();
+  const __toneMap = { synced: 'ok', success: 'ok', pending: 'warn', error: 'bad' };
+  const __labelMap = { synced: 'Sincronizado', success: 'Éxito', pending: 'Pendiente', error: 'Error' };
+  const __tone = __toneMap[__s] || 'neutral';
+  const __label = __labelMap[__s] || (status || '—');
+%><span class="pill pill-<%= __tone %>"><span class="pill-dot"></span><%= __label %></span>

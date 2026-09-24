@@ -1,0 +1,9 @@
+node_modules/
+.env
+public/uploads/logos/*
+public/uploads/favicons/*
+public/uploads/empleados/*
+!public/uploads/logos/.gitkeep
+!public/uploads/favicons/.gitkeep
+!public/uploads/empleados/.gitkeep
+data/*.json

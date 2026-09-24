@@ -1,0 +1,22 @@
+      </div>
+    </main>
+  </div>
+  <script>
+    (function () {
+      var el = document.getElementById('live-clock');
+      if (!el) return;
+      var fmt = new Intl.DateTimeFormat('es-EC', { timeZone: 'America/Guayaquil', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+      function tick() { el.textContent = fmt.format(new Date()); }
+      tick();
+      setInterval(tick, 1000);
+    })();
+    document.querySelectorAll('.stat-card, .cms-section, .table-wrap').forEach(function (el) {
+      el.addEventListener('mousemove', function (e) {
+        var rect = el.getBoundingClientRect();
+        el.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+        el.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+      });
+    });
+  </script>
+</body>
+</html>
