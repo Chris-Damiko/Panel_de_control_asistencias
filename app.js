@@ -4,7 +4,11 @@ const path = require('path');
 const session = require('express-session');
 const flash = require('connect-flash');
 
+const bcrypt = require('bcrypt');
+
 const InstitutionSettings = require('./models/InstitutionSettings');
+const User = require('./models/User');
+const githubSync = require('./lib/githubSync');
 
 const authRoutes = require('./routes/auth');
 const dashboardRoutes = require('./routes/dashboard');
@@ -68,6 +72,31 @@ app.use((err, req, res, next) => {
   res.status(500).render('error', { message: 'Error interno del servidor.' });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
-attendanceSimulator.start();
+// Si no hay usuarios (p. ej. primer arranque en un host sin shell), crea el
+// admin a partir de ADMIN_EMAIL / ADMIN_PASSWORD.
+async function ensureAdmin() {
+  const { ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME } = process.env;
+  if (!ADMIN_EMAIL || !ADMIN_PASSWORD || await User.count() > 0) return;
+  const password_hash = await bcrypt.hash(ADMIN_PASSWORD, 10);
+  await User.create({ full_name: ADMIN_NAME || 'Administrador', email: ADMIN_EMAIL, password_hash, role: 'admin' });
+  console.log(`Admin creado: ${ADMIN_EMAIL}`);
+}
+
+async function start() {
+  await githubSync.pullAll();
+  await ensureAdmin();
+
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
+  attendanceSimulator.start();
+}
+
+process.on('SIGTERM', async () => {
+  await githubSync.flush();
+  process.exit(0);
+});
+
+start().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -6,6 +6,7 @@ const { requireAuth, requireAdmin } = require('../middlewares/auth');
 const { uploadNomina } = require('../middlewares/upload');
 const Employee = require('../models/Employee');
 const SyncLog = require('../models/SyncLog');
+const githubSync = require('../lib/githubSync');
 const hikvisionClient = require('../services/hikvision/hikvisionClient');
 const { parseNomina } = require('../services/importer/employeeImporter');
 const attendanceStats = require('../services/attendanceStats');
@@ -96,6 +97,7 @@ router.post(
           const destDir = path.join(__dirname, '..', 'public', 'uploads', 'empleados');
           await fs.mkdir(destDir, { recursive: true });
           await fs.writeFile(path.join(destDir, filename), foto.buffer);
+          githubSync.pushFile(path.join(destDir, filename));
           await Employee.updatePhotoPath(employeeId, path.posix.join('/uploads/empleados', filename));
 
           await hikvisionClient.addFace(row.employee_no, foto.buffer, foto.mimetype);
