@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": 1,
+    "full_name": "Administrador",
+    "email": "admin@admin.com",
+    "password_hash": "$2b$10$F6bha7Gwa5rUxDjRph7ZwewM6j6zXrB3WSgvZlgR.UUcvA/ei0FGq",
+    "role": "admin",
+    "created_at": "2026-09-25T00:32:10.133Z"
+  }
+]
