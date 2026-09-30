@@ -1909,5 +1909,26 @@
     "event_type": "entrada",
     "event_at": "2026-09-29T21:05:00.000Z",
     "created_at": "2026-09-29T21:05:30.141Z"
+  },
+  {
+    "id": 274,
+    "employee_id": 6,
+    "event_type": "salida",
+    "event_at": "2026-09-30T03:00:00.000Z",
+    "created_at": "2026-09-30T03:00:30.297Z"
+  },
+  {
+    "id": 275,
+    "employee_id": 8,
+    "event_type": "salida",
+    "event_at": "2026-09-30T03:00:00.000Z",
+    "created_at": "2026-09-30T03:00:31.343Z"
+  },
+  {
+    "id": 276,
+    "employee_id": 11,
+    "event_type": "salida",
+    "event_at": "2026-09-30T03:00:00.000Z",
+    "created_at": "2026-09-30T03:00:31.347Z"
   }
 ]
