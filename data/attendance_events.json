@@ -1958,5 +1958,103 @@
     "event_type": "salida",
     "event_at": "2026-09-30T03:03:00.000Z",
     "created_at": "2026-09-30T03:03:30.310Z"
+  },
+  {
+    "id": 281,
+    "employee_id": 6,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:00:00.000Z",
+    "created_at": "2026-10-01T20:31:52.667Z"
+  },
+  {
+    "id": 282,
+    "employee_id": 6,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:04:00.000Z",
+    "created_at": "2026-10-01T20:31:52.669Z"
+  },
+  {
+    "id": 283,
+    "employee_id": 7,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:03:00.000Z",
+    "created_at": "2026-10-01T20:31:52.671Z"
+  },
+  {
+    "id": 284,
+    "employee_id": 7,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:01:00.000Z",
+    "created_at": "2026-10-01T20:31:52.673Z"
+  },
+  {
+    "id": 285,
+    "employee_id": 8,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:00:00.000Z",
+    "created_at": "2026-10-01T20:31:52.676Z"
+  },
+  {
+    "id": 286,
+    "employee_id": 8,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:04:00.000Z",
+    "created_at": "2026-10-01T20:31:52.679Z"
+  },
+  {
+    "id": 287,
+    "employee_id": 9,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:03:00.000Z",
+    "created_at": "2026-10-01T20:31:52.682Z"
+  },
+  {
+    "id": 288,
+    "employee_id": 9,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:01:00.000Z",
+    "created_at": "2026-10-01T20:31:52.685Z"
+  },
+  {
+    "id": 289,
+    "employee_id": 10,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:01:00.000Z",
+    "created_at": "2026-10-01T20:31:52.687Z"
+  },
+  {
+    "id": 290,
+    "employee_id": 10,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:01:00.000Z",
+    "created_at": "2026-10-01T20:31:52.691Z"
+  },
+  {
+    "id": 291,
+    "employee_id": 11,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:04:00.000Z",
+    "created_at": "2026-10-01T20:31:52.694Z"
+  },
+  {
+    "id": 292,
+    "employee_id": 11,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:04:00.000Z",
+    "created_at": "2026-10-01T20:31:52.697Z"
+  },
+  {
+    "id": 293,
+    "employee_id": 12,
+    "event_type": "entrada",
+    "event_at": "2026-09-30T21:01:00.000Z",
+    "created_at": "2026-10-01T20:31:52.700Z"
+  },
+  {
+    "id": 294,
+    "employee_id": 12,
+    "event_type": "salida",
+    "event_at": "2026-10-01T03:01:00.000Z",
+    "created_at": "2026-10-01T20:31:52.702Z"
   }
 ]
