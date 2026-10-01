@@ -2056,5 +2056,12 @@
     "event_type": "salida",
     "event_at": "2026-10-01T03:01:00.000Z",
     "created_at": "2026-10-01T20:31:52.702Z"
+  },
+  {
+    "id": 295,
+    "employee_id": 11,
+    "event_type": "entrada",
+    "event_at": "2026-10-01T21:00:00.000Z",
+    "created_at": "2026-10-01T21:00:52.616Z"
   }
 ]
