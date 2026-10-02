@@ -2105,5 +2105,26 @@
     "event_type": "entrada",
     "event_at": "2026-10-01T21:05:00.000Z",
     "created_at": "2026-10-01T21:05:52.625Z"
+  },
+  {
+    "id": 302,
+    "employee_id": 6,
+    "event_type": "salida",
+    "event_at": "2026-10-02T03:00:00.000Z",
+    "created_at": "2026-10-02T03:00:53.113Z"
+  },
+  {
+    "id": 303,
+    "employee_id": 8,
+    "event_type": "salida",
+    "event_at": "2026-10-02T03:00:00.000Z",
+    "created_at": "2026-10-02T03:00:53.119Z"
+  },
+  {
+    "id": 304,
+    "employee_id": 11,
+    "event_type": "salida",
+    "event_at": "2026-10-02T03:00:00.000Z",
+    "created_at": "2026-10-02T03:00:53.125Z"
   }
 ]
