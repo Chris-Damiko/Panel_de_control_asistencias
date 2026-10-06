@@ -2378,5 +2378,19 @@
     "event_type": "entrada",
     "event_at": "2026-10-06T21:02:00.000Z",
     "created_at": "2026-10-06T21:02:00.063Z"
+  },
+  {
+    "id": 341,
+    "employee_id": 7,
+    "event_type": "entrada",
+    "event_at": "2026-10-06T21:04:00.000Z",
+    "created_at": "2026-10-06T21:04:00.066Z"
+  },
+  {
+    "id": 342,
+    "employee_id": 9,
+    "event_type": "entrada",
+    "event_at": "2026-10-06T21:04:00.000Z",
+    "created_at": "2026-10-06T21:04:00.070Z"
   }
 ]
