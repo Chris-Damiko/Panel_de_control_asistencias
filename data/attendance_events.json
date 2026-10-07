@@ -2399,5 +2399,33 @@
     "event_type": "entrada",
     "event_at": "2026-10-06T21:05:00.000Z",
     "created_at": "2026-10-06T21:05:00.062Z"
+  },
+  {
+    "id": 344,
+    "employee_id": 7,
+    "event_type": "salida",
+    "event_at": "2026-10-07T03:02:00.000Z",
+    "created_at": "2026-10-07T03:02:00.217Z"
+  },
+  {
+    "id": 345,
+    "employee_id": 9,
+    "event_type": "salida",
+    "event_at": "2026-10-07T03:02:00.000Z",
+    "created_at": "2026-10-07T03:02:00.225Z"
+  },
+  {
+    "id": 346,
+    "employee_id": 10,
+    "event_type": "salida",
+    "event_at": "2026-10-07T03:02:00.000Z",
+    "created_at": "2026-10-07T03:02:00.229Z"
+  },
+  {
+    "id": 347,
+    "employee_id": 12,
+    "event_type": "salida",
+    "event_at": "2026-10-07T03:02:00.000Z",
+    "created_at": "2026-10-07T03:02:00.235Z"
   }
 ]
