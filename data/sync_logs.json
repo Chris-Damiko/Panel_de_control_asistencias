@@ -88,5 +88,14 @@
     "status": "success",
     "message": "Reyes Pablo",
     "created_at": "2026-10-21T20:24:11.574Z"
+  },
+  {
+    "id": 11,
+    "employee_id": null,
+    "action": "deletePerson",
+    "adapter": "simulated",
+    "status": "success",
+    "message": "astudillo carlos",
+    "created_at": "2026-10-21T20:25:57.150Z"
   }
 ]
