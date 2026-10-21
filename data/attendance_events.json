@@ -3428,5 +3428,19 @@
     "event_type": "salida",
     "event_at": "2026-10-21T03:04:00.000Z",
     "created_at": "2026-10-21T20:22:48.947Z"
+  },
+  {
+    "id": 491,
+    "employee_id": 7,
+    "event_type": "entrada",
+    "event_at": "2026-10-21T21:01:00.000Z",
+    "created_at": "2026-10-21T21:01:48.158Z"
+  },
+  {
+    "id": 492,
+    "employee_id": 9,
+    "event_type": "entrada",
+    "event_at": "2026-10-21T21:01:00.000Z",
+    "created_at": "2026-10-21T21:01:49.434Z"
   }
 ]
